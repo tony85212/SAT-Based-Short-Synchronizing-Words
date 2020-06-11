@@ -1,7 +1,7 @@
 # SAT-Based-Short-Synchronizing-Words
 
 
-Prerequisites:
+## Prerequisites:
 
  Make sure install python3 and pysmt
  https://github.com/pysmt/pysmt/blob/bc3a5f8ae22c490016a4ce98df10b7f79ac40324/README.rst
