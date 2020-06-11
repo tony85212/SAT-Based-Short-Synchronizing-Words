@@ -8,7 +8,7 @@
 
  Note: The defualt SAT-solver is z3. (solver also need to be download to path)
 
-Running Instrction:
+## Running Instrction:
 
  --input version:
 
@@ -16,7 +16,7 @@ Running Instrction:
   
  --random version:
 
-  > python synchronizing_words.py --random 6 2            # (n states, k inputs)
+  > python synchronizing_words.py --random 6 2            **(n states, k inputs)**
  
  --eval version:
 
