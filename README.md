@@ -7,8 +7,14 @@ The defualt SAT-solver is z3.
 
 --input version:
 
-  python synchronizing_words.py --input < DFA/dfa2.txt
+ > python synchronizing_words.py --input < DFA/dfa2.txt
   
-  
+--random version:
+
+ > python synchronizing_words.py --random 6 2
+ 
+ --eval version:
+
+ > python synchronizing_words.py --eval < DFA/dfa2.txt
   
   
