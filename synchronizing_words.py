@@ -14,6 +14,7 @@ import string
 import random
 import sys
 import time
+import math
 
 class DFA:
 
@@ -217,14 +218,14 @@ def SAT_based(d):
 def eval(d):
 
     time0 = time.time()
-    for i in range(1, (len(d.states)-1)**2 + 1):
+    for i in range(1, int(math.sqrt(len(d.states))*2) + 1):
         solution = CNF_gen(d, i)
     time1 = time.time()
     print("SAT-Based Z3 : {} second".format(time1 - time0))
 
-    '''
+
     time0 = time.time()
-    for i in range(1, (len(d.states)-1)**2 + 1):
+    for i in range(1, int(math.sqrt(len(d.states))*2) + 1):
         all_possible_input = enumarate_input(d.alphabet, i)
         for input in all_possible_input:
             inp_program = list(input)
@@ -238,7 +239,7 @@ def eval(d):
     time1 = time.time()
 
     print("Brute_force : {} second".format(time1 - time0))
-    '''
+
 
 def main():
 
