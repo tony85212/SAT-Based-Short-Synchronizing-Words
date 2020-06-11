@@ -95,6 +95,21 @@ def brute_force(d):
         length += 1
     return None
 
+def fuck(d, length):
+    all_possible_input = enumarate_input(d.alphabet, length)
+
+    for input in all_possible_input:
+        inp_program = list(input)
+        #print("input =", input)
+        final_state = []
+        for initial_state in d.states:
+            d.start_state = initial_state
+            final_state.append(d.run_with_input_list(inp_program))
+        #print(final_state)
+        if(len(set(final_state)) == 1):
+            return input
+
+
 def CNF_gen(d, length):
 
     alphabet = d.alphabet
@@ -191,6 +206,27 @@ def CNF_gen(d, length):
         return ''.join(synchronizing_words)
     return None
 
+
+def SAT_based_OPT(d, low, high, length):
+    #print(low, high, length)
+
+    solution = CNF_gen(d, length)
+    if(solution != None):
+        high = length
+    else:
+        if((len(d.states)-1)**2 == length):
+            return None
+        low = length
+
+    if(high - low == 1):
+        return CNF_gen(d, high)
+    else:
+        return SAT_based_OPT(d, low, high, int((low + high) / 2))
+
+
+
+
+
 def SAT_based(d):
     solution = None
     for i in range(1, (len(d.states)-1)**2 + 1):
@@ -199,6 +235,7 @@ def SAT_based(d):
             break
 
     return solution
+
 
 def main():
     #read dfa from input
@@ -218,8 +255,8 @@ def main():
         tran_func = (int(l[i][0]), l[i][1])
         tf[tran_func] = int(l[i][2])
 
-    d = DFA_generator(20, 2)
-    #d = DFA(states, alphabet, tf, 0, states)
+    #d = DFA_generator(4, 2)
+    d = DFA(states, alphabet, tf, 0, states)
 
     time0 = time.time()
     pp = SAT_based(d)
@@ -227,9 +264,10 @@ def main():
     print(pp, time1 - time0)
 
     time0 = time.time()
-    aa = brute_force(d)
+    pp = SAT_based_OPT(d, 1, (len(d.states)-1)**2, (len(d.states)-1)**2)
     time1 = time.time()
-    print(aa, time1 - time0)
+    print(pp, time1 - time0)
+
 
 if __name__== "__main__":
   main()
