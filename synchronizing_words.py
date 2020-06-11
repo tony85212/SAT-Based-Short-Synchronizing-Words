@@ -215,7 +215,7 @@ def SAT_based(d):
     return solution
 
 def eval(d):
-
+    
     time0 = time.time()
     for i in range(1, (len(d.states)-1)**2 + 1):
         solution = CNF_gen(d, i)
@@ -236,8 +236,10 @@ def eval(d):
                 pass
                 #print(input)
     time1 = time.time()
+
     print("Brute_force : {} second".format(time1 - time0))
 
+    #print(process.memory_info().rss) # in byte
 def main():
 
     d = None
