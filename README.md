@@ -12,7 +12,7 @@ Running Instrction:
 
  --input version:
 
-  > python synchronizing_words.py --input < DFA/dfa2.txt
+  > python synchronizing_words.py --input < DFA/dfa1.txt
   
  --random version:
 
@@ -20,6 +20,6 @@ Running Instrction:
  
  --eval version:
 
-  > python synchronizing_words.py --eval < DFA/dfa2.txt
+  > python synchronizing_words.py --eval < DFA/dfa1.txt
   
   
