@@ -12,7 +12,11 @@ synchronizing words and finding the shortest one. Boolean Satisfiability Problem
 can be assumed as a smart brute-force search, since SAT solvers can find smart solutions to
 SAT problems. In the project, it will calculate the results in the case of SAT-based.
 
-![Scree]()
+![Scree](https://github.com/tony85212/SAT-Based-Short-Synchronizing-Words/blob/master/screenshot/1.JPG)
+
+## Flowchart
+
+![Scree](https://github.com/tony85212/SAT-Based-Short-Synchronizing-Words/blob/master/screenshot/2.JPG)
 
 ## Prerequisites
 
@@ -35,4 +39,16 @@ SAT problems. In the project, it will calculate the results in the case of SAT-b
 
   > python synchronizing_words.py --eval < DFA/dfa1.txt
   
-  
+## Result
+
+![Scree](https://github.com/tony85212/SAT-Based-Short-Synchronizing-Words/blob/master/screenshot/3.JPG)
+
+## Reference
+
+[1] Generating Shortest Synchronizing Sequences using Answer Set Programming
+http://www.kr.tuwien.ac.at/events/aspocp2013/papers/guenicen-etal.pdf
+Canan G¨uni¸cen, Esra Erdem, and H¨usn¨u Yenig¨un
+
+[2] Computing the shortest reset words of synchronizing automata
+https://link.springer.com/chapter/10.1007%2F978-3-540-88282-4_4
+Andrzej Kisielewicz, Jakub Kowalski & Marek Szykuł
